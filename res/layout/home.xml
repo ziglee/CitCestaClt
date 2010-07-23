@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/beneficio_disp"
+            android:layout_weight="1" android:textSize="17sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/beneficio_disp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="15sp" android:textStyle="bold"
+            android:text="R$1199,00" />
+    </LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/seguro_vida"
+			android:layout_weight="1" android:textSize="15sp" android:textStyle="bold" />
+
+		<TextView android:id="@+id/seguro_vida"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="-R$11,04" />
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/plano_saude"
+			android:layout_weight="1" android:textSize="15sp" android:textStyle="bold" />
+
+		<TextView android:id="@+id/plano_saude_total"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:text="-R$133,75" />
+	</LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/plano_odonto"
+            android:layout_weight="1" android:textSize="15sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/plano_odonto_total"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="-R$13,94" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/vale_refeicao"
+            android:layout_weight="1" android:textSize="15sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/vale_refeicao_total"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="-R$300,00" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/vale_alimentacao"
+            android:layout_weight="1" android:textSize="15sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/vale_alimentacao_total"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="-R$300,00" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/transporte"
+            android:layout_weight="1" android:textSize="15sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/transporte_total"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="-R$450,00" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/previdencia"
+            android:layout_weight="1" android:textSize="15sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/previdencia_total"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="-R$100,00" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/educacao"
+            android:layout_weight="1" android:textSize="15sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/educacao_total"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="-R$0,00" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="@string/equipamentos"
+            android:layout_weight="1" android:textSize="15sp" android:textStyle="bold" />
+
+        <TextView android:id="@+id/equipamentos_total"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="-R$0,00" />
+    </LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<TextView android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:text="@string/subtotal"
+			android:layout_weight="1" android:textSize="17sp" android:textStyle="bold" />
+
+		<TextView android:id="@+id/subtotal" android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:textSize="15sp"
+			android:textStyle="bold" android:text="-R$1000,04" />
+	</LinearLayout>
+</LinearLayout>

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Home!</string>
     <string name="app_name">CIT Cesta CLT</string>
-    <string name="health_plan">Plano de Saúde</string>
-    <string name="dental_plan">Plano Dentário</string>
+    <string name="beneficio_disp">Benefício Disponível</string>
+    <string name="plano_saude">Plano de Saúde</string>
+    <string name="plano_odonto">Plano Odontológico</string>
+    <string name="seguro_vida">Seguro de Vida</string>
+    <string name="vale_alimentacao">Visa Vale Alimentação</string>
+    <string name="vale_refeicao">Visa Vale Refeição</string>
+    <string name="transporte">Transporte</string>
+    <string name="educacao">Educação</string>
+    <string name="previdencia">Previdência Privada</string>
+    <string name="equipamentos">Equipamentos</string>
+    <string name="subtotal">Sub-total</string>
 </resources>
