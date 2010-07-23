@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Home!</string>
+    <string name="app_name">CIT Cesta CLT</string>
+    <string name="health_plan">Plano de Saúde</string>
+    <string name="dental_plan">Plano Dentário</string>
+</resources>

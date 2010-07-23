@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    <EditText android:id="@+id/max_total_benefit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+	    <TextView android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/health_plan"/>
+	        
+	    <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R$200,00"/>
+    </LinearLayout>
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+	    <TextView android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/dental_plan"/>
+            
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="R$68,70"/>
+    </LinearLayout>
+        
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <RadioGroup android:layout_width="fill_parent" 
+                android:layout_height="wrap_content" 
+                android:orientation="horizontal">
+        
+		    <RadioButton android:text="Uniodonto" 
+		            android:id="@+id/RadioButton01" 
+		            android:layout_width="wrap_content" 
+		            android:layout_height="wrap_content"
+		            android:checked="true"/>
+	        
+	        <RadioButton android:text="Prodent" 
+	                android:id="@+id/RadioButton02" 
+	                android:layout_width="wrap_content" 
+	                android:layout_height="wrap_content"/>
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>
