@@ -15,7 +15,7 @@
         
 	    <TextView android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/health_plan"/>
+	        android:text="@string/health_plan" android:layout_weight="1" android:textSize="15sp" android:textStyle="1"/>
 	        
 	    <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,13 +23,11 @@
     </LinearLayout>
     
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal" android:layout_width="fill_parent">
         
-	    <TextView android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/dental_plan"/>
+	    <TextView android:layout_height="wrap_content"
+	        android:text="@string/dental_plan" android:layout_weight="1" android:layout_width="wrap_content" android:textSize="15sp" android:textStyle="1"/>
             
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,14 +45,12 @@
         
 		    <RadioButton android:text="Uniodonto" 
 		            android:id="@+id/RadioButton01" 
-		            android:layout_width="wrap_content" 
 		            android:layout_height="wrap_content"
-		            android:checked="true"/>
+		            android:checked="true" android:layout_width="fill_parent" android:layout_weight="1"/>
 	        
 	        <RadioButton android:text="Prodent" 
 	                android:id="@+id/RadioButton02" 
-	                android:layout_width="wrap_content" 
-	                android:layout_height="wrap_content"/>
+	                android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_weight="1"/>
         </RadioGroup>
     </LinearLayout>
 </LinearLayout>
