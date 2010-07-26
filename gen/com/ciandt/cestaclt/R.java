@@ -19,36 +19,31 @@ public final class R {
         public static final int shopping_basket=0x7f020005;
     }
     public static final class id {
-        public static final int ben_valor_cancel_button=0x7f060003;
-        public static final int ben_valor_ok_button=0x7f060002;
-        public static final int ben_valor_text=0x7f060001;
-        public static final int beneficio_disp=0x7f060005;
-        public static final int edit_beneficio_disp=0x7f060004;
-        public static final int edit_educacao=0x7f060014;
-        public static final int edit_equipamentos=0x7f060016;
-        public static final int edit_plano_odonto=0x7f06000a;
-        public static final int edit_plano_saude=0x7f060008;
-        public static final int edit_previdencia=0x7f060012;
-        public static final int edit_seguro_vida=0x7f060006;
-        public static final int edit_transporte=0x7f060010;
-        public static final int edit_vale_alimentacao=0x7f06000e;
-        public static final int edit_vale_refeicao=0x7f06000c;
-        public static final int educacao_total=0x7f060015;
-        public static final int equipamentos_total=0x7f060017;
-        public static final int layout_root=0x7f060000;
-        public static final int plano_odonto_total=0x7f06000b;
-        public static final int plano_saude_total=0x7f060009;
-        public static final int previdencia_total=0x7f060013;
-        public static final int seguro_vida=0x7f060007;
-        public static final int subtotal=0x7f060018;
-        public static final int transporte_total=0x7f060011;
-        public static final int vale_alimentacao_total=0x7f06000f;
-        public static final int vale_refeicao_total=0x7f06000d;
+        public static final int ben_disp_edit_button=0x7f060001;
+        public static final int ben_disp_edit_text=0x7f060000;
+        public static final int beneficio_disp=0x7f060003;
+        public static final int beneficio_disp_row=0x7f060002;
+        public static final int edit_previdencia=0x7f06000c;
+        public static final int edit_seguro_vida=0x7f060004;
+        public static final int educacao_total=0x7f06000e;
+        public static final int equipamentos_total=0x7f06000f;
+        public static final int plano_odonto_total=0x7f060008;
+        public static final int plano_saude_row=0x7f060006;
+        public static final int plano_saude_total=0x7f060007;
+        public static final int previdencia_total=0x7f06000d;
+        public static final int qtde_colab_dep_coletivo=0x7f060011;
+        public static final int qtde_colab_dep_coletivo_minus=0x7f060013;
+        public static final int qtde_colab_dep_coletivo_plus=0x7f060012;
+        public static final int seguro_vida=0x7f060005;
+        public static final int subtotal=0x7f060010;
+        public static final int transporte_total=0x7f06000b;
+        public static final int vale_alimentacao_total=0x7f06000a;
+        public static final int vale_refeicao_total=0x7f060009;
     }
     public static final class layout {
-        public static final int beneficio_disp_dialog=0x7f030000;
+        public static final int ben_disp_edit=0x7f030000;
         public static final int home=0x7f030001;
-        public static final int plano_odonto=0x7f030002;
+        public static final int plano_saude_edit=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

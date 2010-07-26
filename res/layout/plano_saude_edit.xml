@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <TextView android:text="@string/plano_saude" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+        
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:orientation="horizontal" 
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content">
+	    
+	    <EditText android:id="@+id/qtde_colab_dep_coletivo" 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="number" 
+	        android:layout_weight="1" />
+	        
+	    <Button android:id="@+id/qtde_colab_dep_coletivo_plus" 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content" 
+	        android:layout_weight="5" 
+	        android:text="+"/>
+        <Button android:id="@+id/qtde_colab_dep_coletivo_minus" 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:layout_weight="5" 
+            android:text="-"/>
+    
+</LinearLayout>
+ </LinearLayout>

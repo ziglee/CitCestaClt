@@ -10,5 +10,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.BeneficioDispEditActivity"/>
+        <activity android:name=".activity.PlanoSaudeEditActivity"/>
     </application>
 </manifest> 
