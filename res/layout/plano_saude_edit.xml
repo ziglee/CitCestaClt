@@ -1,109 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" 
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-
-	<TextView android:text="@string/plano_saude" style="@style/ScreenHeaderFont"/>
-	        
-    <LinearLayout android:orientation="horizontal" 
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:fadeScrollbars="true">
+    
+	<LinearLayout android:orientation="vertical" 
 	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:minHeight="65sp">
-	    
-	    <TextView android:id="@+id/colab_privativo_text"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:textSize="16sp"/>
-	    <Spinner android:id="@+id/colab_privativo_spinner"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:drawSelectorOnTop="true"
-	        android:prompt="@string/plano_saude"
-	        android:layout_weight="3"
-	    />
-	</LinearLayout>
-	        
-    <LinearLayout android:orientation="horizontal" 
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:minHeight="65sp">
-	    
-	    <TextView android:id="@+id/colab_coletivo_text"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:textSize="16sp"/>
-	    <Spinner 
-	        android:id="@+id/colab_coletivo_spinner"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:drawSelectorOnTop="true"
-	        android:prompt="@string/plano_saude"
-	        android:layout_weight="3"
-	    />
-	</LinearLayout>
-	        
-    <LinearLayout android:orientation="horizontal" 
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:minHeight="65sp">
-	    
-	    <TextView android:id="@+id/agreg_privativo_text"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:textSize="16sp"/>
-	    <Spinner 
-	        android:id="@+id/agreg_privativo_spinner"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:drawSelectorOnTop="true"
-	        android:prompt="@string/plano_saude"
-	        android:layout_weight="3"
-	    />
-	</LinearLayout>
-	        
-    <LinearLayout android:orientation="horizontal" 
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:minHeight="65sp">
-	    
-	    <TextView android:id="@+id/agreg_coletivo_text"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:textSize="16sp"/>
-	    <Spinner 
-	        android:id="@+id/agreg_coletivo_spinner"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:drawSelectorOnTop="true"
-	        android:prompt="@string/plano_saude"
-	        android:layout_weight="3"
-	    />
-	</LinearLayout>
-	        
-    <LinearLayout android:orientation="horizontal" 
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:minHeight="65sp">
-	    
-	    <TextView android:text="Total" 
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:textSize="20sp"/>
-	    <TextView android:id="@+id/plano_saude_subtotal" 
-	    	android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="2"
-	        android:textSize="20sp"/>
-	</LinearLayout>
+	    android:layout_height="fill_parent">
 	
-	<Button android:text="Ok"
-		android:id="@+id/plano_saude_save"
-		android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"/>
-</LinearLayout>
+		<TextView android:text="@string/plano_saude" style="@style/ScreenHeaderFont"/>
+		        
+	    <LinearLayout android:orientation="horizontal" 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:minHeight="65sp">
+		    
+		    <TextView android:id="@+id/colab_privativo_text"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:textSize="16sp"/>
+		    <Spinner android:id="@+id/colab_privativo_spinner"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:drawSelectorOnTop="true"
+		        android:prompt="@string/plano_saude"
+		        android:layout_weight="3"
+		    />
+		</LinearLayout>
+		        
+	    <LinearLayout android:orientation="horizontal" 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:minHeight="65sp">
+		    
+		    <TextView android:id="@+id/colab_coletivo_text"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:textSize="16sp"/>
+		    <Spinner 
+		        android:id="@+id/colab_coletivo_spinner"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:drawSelectorOnTop="true"
+		        android:prompt="@string/plano_saude"
+		        android:layout_weight="3"
+		    />
+		</LinearLayout>
+		        
+	    <LinearLayout android:orientation="horizontal" 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:minHeight="65sp">
+		    
+		    <TextView android:id="@+id/agreg_privativo_text"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:textSize="16sp"/>
+		    <Spinner 
+		        android:id="@+id/agreg_privativo_spinner"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:drawSelectorOnTop="true"
+		        android:prompt="@string/plano_saude"
+		        android:layout_weight="3"
+		    />
+		</LinearLayout>
+		        
+	    <LinearLayout android:orientation="horizontal" 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:minHeight="65sp">
+		    
+		    <TextView android:id="@+id/agreg_coletivo_text"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:textSize="16sp"/>
+		    <Spinner 
+		        android:id="@+id/agreg_coletivo_spinner"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:drawSelectorOnTop="true"
+		        android:prompt="@string/plano_saude"
+		        android:layout_weight="3"
+		    />
+		</LinearLayout>
+	    
+	    <LinearLayout android:orientation="horizontal" 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+	        
+	        <TextView android:text="Outros" 
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:textSize="20sp"/>
+	        <EditText android:id="@+id/plano_saude_outros" 
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:inputType="numberDecimal" 
+	            android:layout_weight="3"
+	            android:gravity="right"/>
+	    </LinearLayout>
+		        
+	    <LinearLayout android:orientation="horizontal" 
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content">
+		    
+		    <TextView android:text="Total" 
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:textSize="20sp"/>
+		    <TextView android:id="@+id/plano_saude_subtotal" 
+		    	android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="2"
+		        android:textSize="20sp"/>
+		</LinearLayout>
+	        
+		<Button android:text="Ok"
+			android:id="@+id/plano_saude_save"
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"/>
+	</LinearLayout>
+</ScrollView>

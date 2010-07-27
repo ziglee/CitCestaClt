@@ -40,11 +40,13 @@ public class Home extends Activity {
 	private float equipamentos;
 	private float subtotal;
 	
-	public static final String BEN_DISP_VALUE = "BEN_DISP_VALUE";
-	public static final String PLANO_SAUDE_VALUE = "PLANO_SAUDE_VALUE";
+	public static final String BEN_DISP_RESULT_VALUE = "BEN_DISP_RESULT_VALUE";
+	public static final String PLANO_SAUDE_RESULT_VALUE = "PLANO_SAUDE_RESULT_VALUE";
+	public static final String PLANO_ODONTO_RESULT_VALUE = "PLANO_ODONTO_RESULT_VALUE";
 	
-	public static final int PICK_BEN_DISP_VALUE_REQUEST = 0;
+	public static final int BEN_DISP_VALUE_REQUEST = 0;
 	public static final int PLANO_SAUDE_EDIT_REQUEST = 1;
+	public static final int PLANO_ODONTO_EDIT_REQUEST = 2;
 
     /** Called when the activity is first created. */
     @Override
@@ -60,15 +62,20 @@ public class Home extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode,
             Intent data) {
-        if (requestCode == PICK_BEN_DISP_VALUE_REQUEST) {
+        if (requestCode == BEN_DISP_VALUE_REQUEST) {
             if (resultCode == RESULT_OK) {
-            	beneficioDisp = data.getExtras().getFloat(BEN_DISP_VALUE);
+            	beneficioDisp = data.getExtras().getFloat(BEN_DISP_RESULT_VALUE);
 				beneficioDispTV.setText(Util.formatarMoeda(beneficioDisp));
             }
         }else if (requestCode == PLANO_SAUDE_EDIT_REQUEST){
         	if (resultCode == RESULT_OK) {
-        		planoSaude = data.getExtras().getFloat(PLANO_SAUDE_VALUE);
+        		planoSaude = data.getExtras().getFloat(PLANO_SAUDE_RESULT_VALUE);
 				planoSaudeTV.setText(Util.formatarMoeda(planoSaude));
+        	}
+        }else if (requestCode == PLANO_ODONTO_EDIT_REQUEST){
+        	if (resultCode == RESULT_OK) {
+        		planoOdonto = data.getExtras().getFloat(PLANO_ODONTO_RESULT_VALUE);
+				planoOdontoTV.setText(Util.formatarMoeda(planoOdonto));
         	}
         }
         
@@ -100,8 +107,8 @@ public class Home extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(Home.this, BeneficioDispEditActivity.class);
-				i.putExtra(BEN_DISP_VALUE, beneficioDisp);
-				startActivityForResult(i, PICK_BEN_DISP_VALUE_REQUEST);
+				i.putExtra(BEN_DISP_RESULT_VALUE, beneficioDisp);
+				startActivityForResult(i, BEN_DISP_VALUE_REQUEST);
 			}
 		});
         
@@ -111,6 +118,15 @@ public class Home extends Activity {
 			public void onClick(View v) {
 				Intent i = new Intent(Home.this, PlanoSaudeEditActivity.class);
 				startActivityForResult(i, PLANO_SAUDE_EDIT_REQUEST);
+			}
+		});
+        
+        View planoOdontoRow = (View) findViewById(R.id.plano_odonto_row);
+        planoOdontoRow.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(Home.this, PlanoOdontoEditActivity.class);
+				startActivityForResult(i, PLANO_ODONTO_EDIT_REQUEST);
 			}
 		});
     }

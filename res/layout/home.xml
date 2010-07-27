@@ -2,13 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:fadeScrollbars="true">
-	
+
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 		android:orientation="vertical" android:layout_width="fill_parent"
 		android:layout_height="fill_parent">
 
-		<LinearLayout android:id="@+id/beneficio_disp_row" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:orientation="horizontal">
+		<LinearLayout android:id="@+id/beneficio_disp_row"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:orientation="horizontal">
 			<ImageView style="@style/PencilImage" />
 			<TextView android:text="@string/beneficio_disp" style="@style/BenefitFont" />
 			<TextView android:id="@+id/beneficio_disp" style="@style/BenefitValueFont" />
@@ -21,15 +22,17 @@
 			<TextView android:id="@+id/seguro_vida" style="@style/BenefitValueFont" />
 		</LinearLayout>
 
-		<LinearLayout android:id="@+id/plano_saude_row" android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:orientation="horizontal">
+		<LinearLayout android:id="@+id/plano_saude_row"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:orientation="horizontal">
 			<ImageView style="@style/PencilImage" />
 			<TextView android:text="@string/plano_saude" style="@style/BenefitFont" />
 			<TextView android:id="@+id/plano_saude_total" style="@style/BenefitValueFont" />
 		</LinearLayout>
 
-		<LinearLayout android:layout_width="fill_parent"
-			android:layout_height="wrap_content" android:orientation="horizontal">
+		<LinearLayout android:id="@+id/plano_odonto_row"
+			android:layout_width="fill_parent" android:layout_height="wrap_content"
+			android:orientation="horizontal">
 			<ImageView style="@style/PencilImage" />
 			<TextView android:text="@string/plano_odonto" style="@style/BenefitFont" />
 			<TextView android:id="@+id/plano_odonto_total" style="@style/BenefitValueFont" />

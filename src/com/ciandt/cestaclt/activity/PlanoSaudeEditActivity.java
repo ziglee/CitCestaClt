@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +28,7 @@ public class PlanoSaudeEditActivity extends Activity {
 	private int colabColetivo;
 	private int agregPrivativo;
 	private int agregColetivo;
+	private float outros;
 	private float total;
 	
 	private TextView colabPrivativoTV;
@@ -36,6 +40,7 @@ public class PlanoSaudeEditActivity extends Activity {
 	private Spinner colabColetivoSpinner;
 	private Spinner agregPrivativoSpinner;
 	private Spinner agregColetivoSpinner;
+	private EditText outrosEditText;
 	private Button ok;
 	
 	private static final float colabPrivativoValue = 133.75f;
@@ -49,6 +54,7 @@ public class PlanoSaudeEditActivity extends Activity {
 		setContentView(R.layout.plano_saude_edit);
 		loadPreferences();
 		bindComponents();
+		calculateAndUpdateTotal();
 		
 		colabPrivativoTV.setText("Privativo para colaboradores e dependentes* ("+ Util.formatarMoeda(colabPrivativoValue) +")");
 		colabColetivoTV.setText("Colaborativo para colaboradores e dependentes* ("+ Util.formatarMoeda(colabColetivoValue) +")");
@@ -66,6 +72,7 @@ public class PlanoSaudeEditActivity extends Activity {
 		agregPrivativoTV = (TextView) findViewById(R.id.agreg_privativo_text);
 		agregColetivoTV = (TextView) findViewById(R.id.agreg_coletivo_text);
 		totalTV = (TextView) findViewById(R.id.plano_saude_subtotal);
+		outrosEditText = (EditText) findViewById(R.id.plano_saude_outros);
 		ok = (Button) findViewById(R.id.plano_saude_save);
 		
 		ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.quantidade, android.R.layout.simple_spinner_item);
@@ -75,6 +82,19 @@ public class PlanoSaudeEditActivity extends Activity {
 	    colabColetivoSpinner.setAdapter(adapter);
 	    agregPrivativoSpinner.setAdapter(adapter);
 	    agregColetivoSpinner.setAdapter(adapter);
+	    
+	    outrosEditText.addTextChangedListener(new TextWatcher() {
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before, int count) {
+			}
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+			}
+			@Override
+			public void afterTextChanged(Editable s) {
+				calculateAndUpdateTotal();
+			}
+		});
 		
 		OnItemSelectedListener onItemSelectedListener = new OnItemSelectedListener() {
 			@Override
@@ -97,6 +117,8 @@ public class PlanoSaudeEditActivity extends Activity {
 		agregPrivativoSpinner.setSelection(agregPrivativo);
 		agregPrivativoSpinner.setSelection(agregColetivo);
 		
+		outrosEditText.setText(Float.toString(outros));
+		
 		ok.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -104,9 +126,10 @@ public class PlanoSaudeEditActivity extends Activity {
 					Toast.makeText(PlanoSaudeEditActivity.this, "Plano de saúde é obrigatório", Toast.LENGTH_SHORT).show();
 				}else{
 					calculateAndUpdateTotal();
+					writePreferences();
 					
 					Bundle bundle = new Bundle();
-					bundle.putFloat(Home.PLANO_SAUDE_VALUE, -total);
+					bundle.putFloat(Home.PLANO_SAUDE_RESULT_VALUE, -total);
 	
 					Intent intent = new Intent();
 					intent.putExtras(bundle);
@@ -117,12 +140,6 @@ public class PlanoSaudeEditActivity extends Activity {
 		});
 	}
 	
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
-		writePreferences();
-	}
-	
 	private void loadPreferences(){
     	SharedPreferences settings = getSharedPreferences(PlanoSaudeEditActivity.PREFS_NAME, MODE_PRIVATE);
     	
@@ -130,6 +147,7 @@ public class PlanoSaudeEditActivity extends Activity {
 		colabColetivo = settings.getInt("colabColetivo", 0);
 		agregPrivativo = settings.getInt("agregPrivativo", 0);
 		agregColetivo = settings.getInt("agregColetivo", 0);
+		outros = settings.getFloat("outros", 0f);
     }
 	
 	private void writePreferences(){
@@ -140,6 +158,7 @@ public class PlanoSaudeEditActivity extends Activity {
     	editor.putInt("colabColetivo", colabColetivo);
     	editor.putInt("agregPrivativo", agregPrivativo);
     	editor.putInt("agregColetivo", agregColetivo);
+    	editor.putFloat("outros", outros);
     	
     	editor.commit();
     }
@@ -150,10 +169,17 @@ public class PlanoSaudeEditActivity extends Activity {
 		agregPrivativo = Integer.parseInt((String)agregPrivativoSpinner.getSelectedItem());
 		agregColetivo = Integer.parseInt((String)agregColetivoSpinner.getSelectedItem());
 		
+		if(!outrosEditText.getText().toString().trim().equals("")){
+			outros = Float.parseFloat(outrosEditText.getText().toString());
+		}else{
+			outros = 0f;
+		}
+		
 		total = colabPrivativo * colabPrivativoValue;
 		total += colabColetivo * colabColetivoValue;
 		total += agregPrivativo * agregPrivativoValue;
 		total += agregColetivo * agregColetivoValue;
+		total += outros;
 		totalTV.setText(Util.formatarMoeda(total));
 	}
 }
