@@ -26,7 +26,7 @@ public class Home extends Activity {
 	private TextView previdenciaPrivTV;
 	private TextView educacaoTV;
 	private TextView equipamentosTV;
-	private TextView subtotalTV;
+	private TextView totalTV;
 	
 	private float beneficioDisp;
 	private float seguroVida;
@@ -38,7 +38,7 @@ public class Home extends Activity {
 	private float previdenciaPriv;
 	private float educacao;
 	private float equipamentos;
-	private float subtotal;
+	private float total;
 	
 	public static final String BEN_DISP_RESULT_VALUE = "BEN_DISP_RESULT_VALUE";
 	public static final String PLANO_SAUDE_RESULT_VALUE = "PLANO_SAUDE_RESULT_VALUE";
@@ -60,7 +60,7 @@ public class Home extends Activity {
         bindComponents();
         loadPreferences();
         loadValuesToComponents();
-        calculateAndUpdateSubtotal();
+        calculateAndUpdateTotal();
     }
     
     @Override
@@ -86,9 +86,14 @@ public class Home extends Activity {
         		valeRefeicao = data.getExtras().getFloat(VALE_REF_RESULT_VALUE);
         		valeRefeicaoTV.setText(Util.formatarMoeda(valeRefeicao));
         	}
+        }else if (requestCode == VALE_ALIM_EDIT_REQUEST){
+        	if (resultCode == RESULT_OK) {
+        		valeAlimentacao = data.getExtras().getFloat(VALE_ALIM_RESULT_VALUE);
+        		valeAlimentacaoTV.setText(Util.formatarMoeda(valeAlimentacao));
+        	}
         }
         
-        calculateAndUpdateSubtotal();
+        calculateAndUpdateTotal();
         writePreferences();
     }
     
@@ -109,7 +114,7 @@ public class Home extends Activity {
         previdenciaPrivTV = (TextView)findViewById(R.id.previdencia_total);
         educacaoTV = (TextView)findViewById(R.id.educacao_total);
         equipamentosTV = (TextView)findViewById(R.id.equipamentos_total);
-        subtotalTV = (TextView)findViewById(R.id.subtotal);
+        totalTV = (TextView)findViewById(R.id.total);
         
         View beneficioDispRow = (View) findViewById(R.id.beneficio_disp_row);
         beneficioDispRow.setOnClickListener(new OnClickListener() {
@@ -149,6 +154,17 @@ public class Home extends Activity {
 				startActivityForResult(i, VALE_REF_EDIT_REQUEST);
 			}
 		});
+        
+        View valeAlimentacaoRow = (View) findViewById(R.id.vale_alimentacao_row);
+        valeAlimentacaoRow.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(Home.this, ValeAlimentacaoEditActivity.class);
+				i.putExtra(VALE_REF_RESULT_VALUE, Math.abs(valeRefeicao));
+				i.putExtra(VALE_ALIM_RESULT_VALUE, Math.abs(valeAlimentacao));
+				startActivityForResult(i, VALE_ALIM_EDIT_REQUEST);
+			}
+		});
     }
     
     private void loadPreferences(){
@@ -164,7 +180,7 @@ public class Home extends Activity {
 		previdenciaPriv = settings.getFloat("previdenciaPriv", -100f);
 		educacao = settings.getFloat("educacao", 0f);
 		equipamentos = settings.getFloat("equipamentos", 0f);
-		subtotal = settings.getFloat("subtotal", 0f);
+		total = settings.getFloat("total", 0f);
     }
 
 	private void loadValuesToComponents() {
@@ -178,21 +194,21 @@ public class Home extends Activity {
         previdenciaPrivTV.setText(Util.formatarMoeda(previdenciaPriv));
         educacaoTV.setText(Util.formatarMoeda(educacao));
         equipamentosTV.setText(Util.formatarMoeda(equipamentos));
-        subtotalTV.setText(Util.formatarMoeda(subtotal));
+        totalTV.setText(Util.formatarMoeda(total));
 	}
     
-    private void calculateAndUpdateSubtotal(){
-    	float subtotal = calculateSubtotal();
+    private void calculateAndUpdateTotal(){
+    	float total = calculateTotal();
     	
-    	if(subtotal < 0){
-    		subtotalTV.setTextColor(Color.RED);
+    	if(total < 0){
+    		totalTV.setTextColor(Color.RED);
         }else{
-        	subtotalTV.setTextColor(Color.LTGRAY);
+        	totalTV.setTextColor(Color.LTGRAY);
         }
-    	subtotalTV.setText(Util.formatarMoeda(subtotal));
+    	totalTV.setText(Util.formatarMoeda(total));
     }
     
-    private float calculateSubtotal(){
+    private float calculateTotal(){
     	return beneficioDisp + seguroVida + planoSaude + 
     		planoOdonto + valeRefeicao + valeAlimentacao + transporte + 
     		previdenciaPriv + educacao + equipamentos;
@@ -212,7 +228,7 @@ public class Home extends Activity {
     	editor.putFloat("previdenciaPriv", previdenciaPriv);
     	editor.putFloat("educacao", educacao);
     	editor.putFloat("equipamentos", equipamentos);
-    	editor.putFloat("subtotal", subtotal);
+    	editor.putFloat("total", total);
     	
     	editor.commit();
     }

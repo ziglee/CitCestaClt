@@ -11,5 +11,5 @@
     <string name="educacao">Educação</string>
     <string name="previdencia">Previdência Privada</string>
     <string name="equipamentos">Equipamentos</string>
-    <string name="subtotal">Sub-total</string>
+    <string name="total">Total</string>
 </resources>

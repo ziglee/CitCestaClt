@@ -17,5 +17,6 @@
         <activity android:name=".activity.PlanoSaudeEditActivity"/>
         <activity android:name=".activity.PlanoOdontoEditActivity"/>
         <activity android:name=".activity.ValeRefeicaoEditActivity"/>
+        <activity android:name=".activity.ValeAlimentacaoEditActivity"/>
     </application>
 </manifest> 
