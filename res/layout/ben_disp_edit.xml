@@ -9,7 +9,8 @@
     <EditText android:id="@+id/ben_disp_edit_text" 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal" 
+        android:gravity="right"/>
         
     <Button android:id="@+id/ben_disp_edit_button" 
         android:layout_width="fill_parent"
