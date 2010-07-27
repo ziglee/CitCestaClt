@@ -38,8 +38,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_weight="1"
 		        android:textSize="16sp"/>
-		    <Spinner 
-		        android:id="@+id/colab_coletivo_spinner"
+		    <Spinner android:id="@+id/colab_coletivo_spinner"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:drawSelectorOnTop="true"
@@ -58,8 +57,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_weight="1"
 		        android:textSize="16sp"/>
-		    <Spinner 
-		        android:id="@+id/agreg_privativo_spinner"
+		    <Spinner android:id="@+id/agreg_privativo_spinner"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:drawSelectorOnTop="true"
@@ -78,8 +76,7 @@
 		        android:layout_height="wrap_content"
 		        android:layout_weight="1"
 		        android:textSize="16sp"/>
-		    <Spinner 
-		        android:id="@+id/agreg_coletivo_spinner"
+		    <Spinner android:id="@+id/agreg_coletivo_spinner"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
 		        android:drawSelectorOnTop="true"

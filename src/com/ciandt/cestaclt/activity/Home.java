@@ -43,10 +43,14 @@ public class Home extends Activity {
 	public static final String BEN_DISP_RESULT_VALUE = "BEN_DISP_RESULT_VALUE";
 	public static final String PLANO_SAUDE_RESULT_VALUE = "PLANO_SAUDE_RESULT_VALUE";
 	public static final String PLANO_ODONTO_RESULT_VALUE = "PLANO_ODONTO_RESULT_VALUE";
+	public static final String VALE_REF_RESULT_VALUE = "VALE_REF_RESULT_VALUE";
+	public static final String VALE_ALIM_RESULT_VALUE = "VALE_ALIM_RESULT_VALUE";
 	
 	public static final int BEN_DISP_VALUE_REQUEST = 0;
 	public static final int PLANO_SAUDE_EDIT_REQUEST = 1;
 	public static final int PLANO_ODONTO_EDIT_REQUEST = 2;
+	public static final int VALE_REF_EDIT_REQUEST = 3;
+	public static final int VALE_ALIM_EDIT_REQUEST = 4;
 
     /** Called when the activity is first created. */
     @Override
@@ -76,6 +80,11 @@ public class Home extends Activity {
         	if (resultCode == RESULT_OK) {
         		planoOdonto = data.getExtras().getFloat(PLANO_ODONTO_RESULT_VALUE);
 				planoOdontoTV.setText(Util.formatarMoeda(planoOdonto));
+        	}
+        }else if (requestCode == VALE_REF_EDIT_REQUEST){
+        	if (resultCode == RESULT_OK) {
+        		valeRefeicao = data.getExtras().getFloat(VALE_REF_RESULT_VALUE);
+        		valeRefeicaoTV.setText(Util.formatarMoeda(valeRefeicao));
         	}
         }
         
@@ -127,6 +136,17 @@ public class Home extends Activity {
 			public void onClick(View v) {
 				Intent i = new Intent(Home.this, PlanoOdontoEditActivity.class);
 				startActivityForResult(i, PLANO_ODONTO_EDIT_REQUEST);
+			}
+		});
+        
+        View valeRefeicaoRow = (View) findViewById(R.id.vale_refeicao_row);
+        valeRefeicaoRow.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(Home.this, ValeRefeicaoEditActivity.class);
+				i.putExtra(VALE_REF_RESULT_VALUE, Math.abs(valeRefeicao));
+				i.putExtra(VALE_ALIM_RESULT_VALUE, Math.abs(valeAlimentacao));
+				startActivityForResult(i, VALE_REF_EDIT_REQUEST);
 			}
 		});
     }
