@@ -7,9 +7,13 @@ import java.util.Locale;
 public class Util {
 
 	public static final Locale localePtBR = new Locale("pt","BR");
-	public static final DecimalFormat currencyFormat = new DecimalFormat("¤0.00;-¤0.00");
+	public static final DecimalFormat currencyFormat = new DecimalFormat("Â¤0.00;-Â¤0.00");
 	
 	static{
 		currencyFormat.setDecimalFormatSymbols(new DecimalFormatSymbols(localePtBR));
 	}
+
+    public static String formatarMoeda(float valor){
+    	return currencyFormat.format(valor);
+    }
 }

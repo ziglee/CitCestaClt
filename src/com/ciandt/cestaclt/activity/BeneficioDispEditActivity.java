@@ -43,7 +43,7 @@ public class BeneficioDispEditActivity extends Activity {
 					setResult(RESULT_OK, intent);
 					finish();
 				}else{
-					Toast.makeText(BeneficioDispEditActivity.this, "Digite algum valor decimal v·lido", Toast.LENGTH_SHORT).show();
+					Toast.makeText(BeneficioDispEditActivity.this, "Digite algum valor decimal v√°lido", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});

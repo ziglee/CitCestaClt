@@ -63,12 +63,12 @@ public class Home extends Activity {
         if (requestCode == PICK_BEN_DISP_VALUE_REQUEST) {
             if (resultCode == RESULT_OK) {
             	beneficioDisp = data.getExtras().getFloat(BEN_DISP_VALUE);
-				beneficioDispTV.setText(formatarMoeda(beneficioDisp));
+				beneficioDispTV.setText(Util.formatarMoeda(beneficioDisp));
             }
-        }else if (requestCode == PICK_BEN_DISP_VALUE_REQUEST){
+        }else if (requestCode == PLANO_SAUDE_EDIT_REQUEST){
         	if (resultCode == RESULT_OK) {
         		planoSaude = data.getExtras().getFloat(PLANO_SAUDE_VALUE);
-				planoSaudeTV.setText(formatarMoeda(planoSaude));
+				planoSaudeTV.setText(Util.formatarMoeda(planoSaude));
         	}
         }
         
@@ -116,7 +116,7 @@ public class Home extends Activity {
     }
     
     private void loadPreferences(){
-    	SharedPreferences settings = getSharedPreferences(PlanoSaudeEditActivity.PREFS_NAME, MODE_PRIVATE);
+    	SharedPreferences settings = getSharedPreferences(Home.PREFS_NAME, MODE_PRIVATE);
     	
 		beneficioDisp = settings.getFloat("beneficioDisp", 1199.00f);
 		seguroVida = settings.getFloat("seguroVida", -11.04f);
@@ -132,17 +132,17 @@ public class Home extends Activity {
     }
 
 	private void loadValuesToComponents() {
-		beneficioDispTV.setText(formatarMoeda(beneficioDisp));
-        seguroVidaTV.setText(formatarMoeda(seguroVida));
-        planoSaudeTV.setText(formatarMoeda(planoSaude));
-        planoOdontoTV.setText(formatarMoeda(planoOdonto));
-        valeRefeicaoTV.setText(formatarMoeda(valeRefeicao));
-        valeAlimentacaoTV.setText(formatarMoeda(valeAlimentacao));
-        transporteTV.setText(formatarMoeda(transporte));
-        previdenciaPrivTV.setText(formatarMoeda(previdenciaPriv));
-        educacaoTV.setText(formatarMoeda(educacao));
-        equipamentosTV.setText(formatarMoeda(equipamentos));
-        subtotalTV.setText(formatarMoeda(subtotal));
+		beneficioDispTV.setText(Util.formatarMoeda(beneficioDisp));
+        seguroVidaTV.setText(Util.formatarMoeda(seguroVida));
+        planoSaudeTV.setText(Util.formatarMoeda(planoSaude));
+        planoOdontoTV.setText(Util.formatarMoeda(planoOdonto));
+        valeRefeicaoTV.setText(Util.formatarMoeda(valeRefeicao));
+        valeAlimentacaoTV.setText(Util.formatarMoeda(valeAlimentacao));
+        transporteTV.setText(Util.formatarMoeda(transporte));
+        previdenciaPrivTV.setText(Util.formatarMoeda(previdenciaPriv));
+        educacaoTV.setText(Util.formatarMoeda(educacao));
+        equipamentosTV.setText(Util.formatarMoeda(equipamentos));
+        subtotalTV.setText(Util.formatarMoeda(subtotal));
 	}
     
     private void calculateAndUpdateSubtotal(){
@@ -153,7 +153,7 @@ public class Home extends Activity {
         }else{
         	subtotalTV.setTextColor(Color.LTGRAY);
         }
-    	subtotalTV.setText(formatarMoeda(subtotal));
+    	subtotalTV.setText(Util.formatarMoeda(subtotal));
     }
     
     private float calculateSubtotal(){
@@ -162,12 +162,8 @@ public class Home extends Activity {
     		previdenciaPriv + educacao + equipamentos;
     }
     
-    public static String formatarMoeda(float valor){
-    	return Util.currencyFormat.format(valor);
-    }
-    
     private void writePreferences(){
-    	SharedPreferences settings = getSharedPreferences(PlanoSaudeEditActivity.PREFS_NAME, MODE_PRIVATE);
+    	SharedPreferences settings = getSharedPreferences(Home.PREFS_NAME, MODE_PRIVATE);
     	SharedPreferences.Editor editor = settings.edit();
    	 
     	editor.putFloat("beneficioDisp", beneficioDisp);
