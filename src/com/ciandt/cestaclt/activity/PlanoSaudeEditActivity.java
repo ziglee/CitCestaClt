@@ -1,6 +1,8 @@
 package com.ciandt.cestaclt.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,7 +16,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.ciandt.cestaclt.R;
@@ -42,6 +43,7 @@ public class PlanoSaudeEditActivity extends Activity {
 	private Spinner agregColetivoSpinner;
 	private EditText outrosEditText;
 	private Button ok;
+	private AlertDialog alert;
 	
 	private static final float colabPrivativoValue = 133.75f;
 	private static final float colabColetivoValue = 78.79f;
@@ -74,6 +76,16 @@ public class PlanoSaudeEditActivity extends Activity {
 		totalTV = (TextView) findViewById(R.id.plano_saude_subtotal);
 		outrosEditText = (EditText) findViewById(R.id.plano_saude_outros);
 		ok = (Button) findViewById(R.id.plano_saude_save);
+		
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage("Plano de saúde é obrigatório!");
+		builder.setCancelable(true);
+		builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				dialog.dismiss();
+			}
+		});
+		alert = builder.create();
 		
 		ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.quantidade, android.R.layout.simple_spinner_item);
 	    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -123,7 +135,7 @@ public class PlanoSaudeEditActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				if(colabPrivativo == 0 && colabColetivo == 0){
-					Toast.makeText(PlanoSaudeEditActivity.this, "Plano de saúde é obrigatório", Toast.LENGTH_SHORT).show();
+					alert.show();
 				}else{
 					calculateAndUpdateTotal();
 					writePreferences();
