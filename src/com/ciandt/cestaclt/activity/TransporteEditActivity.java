@@ -112,8 +112,6 @@ public class TransporteEditActivity extends Activity {
 
 	private void calculateAndUpdateTotal() {
 		total = 0;
-		estacionamento = estacionamentoCheck.isChecked();
-		fretado = fretadoCheck.isChecked();
 		
 		String valueText = quilometrosEditText.getText().toString();
 		if(!valueText.trim().equals("")){
@@ -121,8 +119,8 @@ public class TransporteEditActivity extends Activity {
 		}
 		
 		total += (quilometros * 44) * quilometroValue;
-		if(estacionamento) total += estacionamentoValue;
-		if(fretado) total += fretadoValue;
+		if(estacionamentoCheck.isChecked()) total += estacionamentoValue;
+		if(fretadoCheck.isChecked()) total += fretadoValue;
 		
 		totalTV.setText(Util.formatarMoeda(total));
 	}
@@ -132,8 +130,8 @@ public class TransporteEditActivity extends Activity {
 		SharedPreferences.Editor editor = settings.edit();
 	   	 
     	editor.putFloat("quilometros", quilometros);
-    	editor.putBoolean("estacionamento", estacionamento);
-    	editor.putBoolean("fretado", fretado);
+    	editor.putBoolean("estacionamento", estacionamentoCheck.isChecked());
+    	editor.putBoolean("fretado", fretadoCheck.isChecked());
     	
     	editor.commit();
 	}
