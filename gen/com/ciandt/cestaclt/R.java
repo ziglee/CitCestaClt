@@ -39,6 +39,8 @@ public final class R {
         public static final int educacao_row=0x7f070013;
         public static final int educacao_total=0x7f070014;
         public static final int equipamentos_total=0x7f070015;
+        public static final int estacionamento_check=0x7f07002c;
+        public static final int fretado_check=0x7f07002b;
         public static final int plano_odonto_outro=0x7f07001c;
         public static final int plano_odonto_radio_group=0x7f070017;
         public static final int plano_odonto_row=0x7f070008;
@@ -55,17 +57,19 @@ public final class R {
         public static final int pro_diamond_radio=0x7f07001b;
         public static final int pro_gold_radio=0x7f07001a;
         public static final int pro_master_radio=0x7f070019;
+        public static final int quilometros=0x7f07002a;
         public static final int seguro_vida=0x7f070005;
         public static final int total=0x7f070016;
+        public static final int transporte_edit_button=0x7f07002d;
         public static final int transporte_row=0x7f07000e;
         public static final int transporte_total=0x7f07000f;
         public static final int uniodonto_radio=0x7f070018;
-        public static final int vale_alimentacao_edit_button=0x7f07002b;
-        public static final int vale_alimentacao_edit_text=0x7f07002a;
+        public static final int vale_alimentacao_edit_button=0x7f07002f;
+        public static final int vale_alimentacao_edit_text=0x7f07002e;
         public static final int vale_alimentacao_row=0x7f07000c;
         public static final int vale_alimentacao_total=0x7f07000d;
-        public static final int vale_refeicao_edit_button=0x7f07002d;
-        public static final int vale_refeicao_edit_text=0x7f07002c;
+        public static final int vale_refeicao_edit_button=0x7f070031;
+        public static final int vale_refeicao_edit_text=0x7f070030;
         public static final int vale_refeicao_row=0x7f07000a;
         public static final int vale_refeicao_total=0x7f07000b;
     }
@@ -74,8 +78,9 @@ public final class R {
         public static final int home=0x7f030001;
         public static final int plano_odonto_edit=0x7f030002;
         public static final int plano_saude_edit=0x7f030003;
-        public static final int vale_alimentacao_edit=0x7f030004;
-        public static final int vale_refeicao_edit=0x7f030005;
+        public static final int transporte_edit=0x7f030004;
+        public static final int vale_alimentacao_edit=0x7f030005;
+        public static final int vale_refeicao_edit=0x7f030006;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

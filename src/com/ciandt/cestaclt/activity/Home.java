@@ -45,12 +45,14 @@ public class Home extends Activity {
 	public static final String PLANO_ODONTO_RESULT_VALUE = "PLANO_ODONTO_RESULT_VALUE";
 	public static final String VALE_REF_RESULT_VALUE = "VALE_REF_RESULT_VALUE";
 	public static final String VALE_ALIM_RESULT_VALUE = "VALE_ALIM_RESULT_VALUE";
+	public static final String TRANSPORTE_RESULT_VALUE = "TRANSPORTE_RESULT_VALUE";
 	
 	public static final int BEN_DISP_VALUE_REQUEST = 0;
 	public static final int PLANO_SAUDE_EDIT_REQUEST = 1;
 	public static final int PLANO_ODONTO_EDIT_REQUEST = 2;
 	public static final int VALE_REF_EDIT_REQUEST = 3;
 	public static final int VALE_ALIM_EDIT_REQUEST = 4;
+	public static final int TRANSPORTE_EDIT_REQUEST = 5;
 
     /** Called when the activity is first created. */
     @Override
@@ -90,6 +92,11 @@ public class Home extends Activity {
         	if (resultCode == RESULT_OK) {
         		valeAlimentacao = data.getExtras().getFloat(VALE_ALIM_RESULT_VALUE);
         		valeAlimentacaoTV.setText(Util.formatarMoeda(valeAlimentacao));
+        	}
+        }else if (requestCode == TRANSPORTE_EDIT_REQUEST){
+        	if (resultCode == RESULT_OK) {
+        		transporte = data.getExtras().getFloat(TRANSPORTE_RESULT_VALUE);
+        		transporteTV.setText(Util.formatarMoeda(transporte));
         	}
         }
         
@@ -163,6 +170,15 @@ public class Home extends Activity {
 				i.putExtra(VALE_REF_RESULT_VALUE, Math.abs(valeRefeicao));
 				i.putExtra(VALE_ALIM_RESULT_VALUE, Math.abs(valeAlimentacao));
 				startActivityForResult(i, VALE_ALIM_EDIT_REQUEST);
+			}
+		});
+        
+        View transporteRow = (View) findViewById(R.id.transporte_row);
+        transporteRow.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(Home.this, TransporteEditActivity.class);
+				startActivityForResult(i, TRANSPORTE_EDIT_REQUEST);
 			}
 		});
     }
