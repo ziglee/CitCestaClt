@@ -46,6 +46,7 @@ public class Home extends Activity {
 	public static final String VALE_REF_RESULT_VALUE = "VALE_REF_RESULT_VALUE";
 	public static final String VALE_ALIM_RESULT_VALUE = "VALE_ALIM_RESULT_VALUE";
 	public static final String TRANSPORTE_RESULT_VALUE = "TRANSPORTE_RESULT_VALUE";
+	public static final String SIMPLE_RESULT_VALUE = "SIMPLE_RESULT_VALUE";
 	
 	public static final int BEN_DISP_VALUE_REQUEST = 0;
 	public static final int PLANO_SAUDE_EDIT_REQUEST = 1;
@@ -53,6 +54,9 @@ public class Home extends Activity {
 	public static final int VALE_REF_EDIT_REQUEST = 3;
 	public static final int VALE_ALIM_EDIT_REQUEST = 4;
 	public static final int TRANSPORTE_EDIT_REQUEST = 5;
+	public static final int PREVIDENCIA_EDIT_REQUEST = 6;
+	public static final int EDUCACAO_EDIT_REQUEST = 7;
+	public static final int EQUIPAMENTOS_EDIT_REQUEST = 8;
 
     /** Called when the activity is first created. */
     @Override
@@ -97,6 +101,21 @@ public class Home extends Activity {
         	if (resultCode == RESULT_OK) {
         		transporte = data.getExtras().getFloat(TRANSPORTE_RESULT_VALUE);
         		transporteTV.setText(Util.formatarMoeda(transporte));
+        	}
+        }else if (requestCode == PREVIDENCIA_EDIT_REQUEST){
+        	if (resultCode == RESULT_OK) {
+        		previdenciaPriv = data.getExtras().getFloat(SIMPLE_RESULT_VALUE);
+        		previdenciaPrivTV.setText(Util.formatarMoeda(previdenciaPriv));
+        	}
+        }else if (requestCode == EDUCACAO_EDIT_REQUEST){
+        	if (resultCode == RESULT_OK) {
+        		educacao = data.getExtras().getFloat(SIMPLE_RESULT_VALUE);
+        		educacaoTV.setText(Util.formatarMoeda(educacao));
+        	}
+        }else if (requestCode == EQUIPAMENTOS_EDIT_REQUEST){
+        	if (resultCode == RESULT_OK) {
+        		equipamentos = data.getExtras().getFloat(SIMPLE_RESULT_VALUE);
+        		equipamentosTV.setText(Util.formatarMoeda(equipamentos));
         	}
         }
         
@@ -179,6 +198,39 @@ public class Home extends Activity {
 			public void onClick(View v) {
 				Intent i = new Intent(Home.this, TransporteEditActivity.class);
 				startActivityForResult(i, TRANSPORTE_EDIT_REQUEST);
+			}
+		});
+        
+        View previdenciaRow = (View) findViewById(R.id.previdencia_row);
+        previdenciaRow.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(Home.this, SimpleEditActivity.class);
+				i.putExtra(SIMPLE_RESULT_VALUE, Math.abs(previdenciaPriv));
+				i.putExtra("EDIT_REQUEST", PREVIDENCIA_EDIT_REQUEST);
+				startActivityForResult(i, PREVIDENCIA_EDIT_REQUEST);
+			}
+		});
+        
+        View educacaoRow = (View) findViewById(R.id.educacao_row);
+        educacaoRow.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(Home.this, SimpleEditActivity.class);
+				i.putExtra(SIMPLE_RESULT_VALUE, Math.abs(educacao));
+				i.putExtra("EDIT_REQUEST", EDUCACAO_EDIT_REQUEST);
+				startActivityForResult(i, EDUCACAO_EDIT_REQUEST);
+			}
+		});
+        
+        View equipamentosRow = (View) findViewById(R.id.equipamentos_row);
+        equipamentosRow.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(Home.this, SimpleEditActivity.class);
+				i.putExtra(SIMPLE_RESULT_VALUE, Math.abs(equipamentos));
+				i.putExtra("EDIT_REQUEST", EQUIPAMENTOS_EDIT_REQUEST);
+				startActivityForResult(i, EQUIPAMENTOS_EDIT_REQUEST);
 			}
 		});
     }

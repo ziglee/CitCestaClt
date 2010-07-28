@@ -19,5 +19,6 @@
         <activity android:name=".activity.ValeRefeicaoEditActivity"/>
         <activity android:name=".activity.ValeAlimentacaoEditActivity"/>
         <activity android:name=".activity.TransporteEditActivity"/>
+        <activity android:name=".activity.SimpleEditActivity"/>
     </application>
 </manifest> 

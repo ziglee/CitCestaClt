@@ -75,7 +75,7 @@ public class PlanoSaudeEditActivity extends Activity {
 		outrosEditText = (EditText) findViewById(R.id.plano_saude_outros);
 		ok = (Button) findViewById(R.id.plano_saude_save);
 		
-		ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.quantidade, android.R.layout.simple_spinner_item);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.quantidade, android.R.layout.simple_spinner_item);
 	    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 	    
 	    colabPrivativoSpinner.setAdapter(adapter);

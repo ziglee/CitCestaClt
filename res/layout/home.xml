@@ -78,7 +78,7 @@
 			<TextView android:id="@+id/educacao_total" style="@style/BenefitValueFont" />
 		</LinearLayout>
 
-		<LinearLayout android:id="@+id/educacao_row"
+		<LinearLayout android:id="@+id/equipamentos_row"
 		    android:layout_width="fill_parent"
 			android:layout_height="wrap_content" android:orientation="horizontal">
 			<ImageView style="@style/PencilImage" />
