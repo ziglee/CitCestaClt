@@ -43,8 +43,8 @@ public class PlanoSaudeEditActivity extends Activity {
 	private EditText outrosEditText;
 	private Button ok;
 	
-	private static final float colabPrivativoValue = 133.75f;
-	private static final float colabColetivoValue = 78.79f;
+	private static final float colabPrivativoValue = 140.44f;
+	private static final float colabColetivoValue = 82.73f;
 	private static final float agregPrivativoValue = 399.23f;
 	private static final float agregColetivoValue = 230.77f;
 	
