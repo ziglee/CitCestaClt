@@ -3,73 +3,75 @@
 	android:layout_width="fill_parent" android:layout_height="fill_parent"
 	android:fadeScrollbars="true">
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:orientation="vertical" android:layout_width="fill_parent"
-		android:layout_height="fill_parent">
+	<LinearLayout android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent">
 
 		<LinearLayout android:id="@+id/beneficio_disp_row" style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/beneficio_disp" style="@style/BenefitFont" />
 			<TextView android:id="@+id/beneficio_disp" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
 		<LinearLayout style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/seguro_vida" style="@style/BenefitFont" />
 			<TextView android:id="@+id/seguro_vida" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
 		<LinearLayout android:id="@+id/plano_saude_row" style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/plano_saude" style="@style/BenefitFont" />
 			<TextView android:id="@+id/plano_saude_total" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
 		<LinearLayout android:id="@+id/plano_odonto_row" style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/plano_odonto" style="@style/BenefitFont" />
 			<TextView android:id="@+id/plano_odonto_total" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
 		<LinearLayout android:id="@+id/vale_refeicao_row" style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/vale_refeicao" style="@style/BenefitFont" />
 			<TextView android:id="@+id/vale_refeicao_total" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
-		<LinearLayout android:id="@+id/vale_alimentacao_row" style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+		<LinearLayout android:id="@+id/vale_alimentacao_row"
+			style="@style/HomeLayoutRow">
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/vale_alimentacao" style="@style/BenefitFont" />
 			<TextView android:id="@+id/vale_alimentacao_total" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
 		<LinearLayout android:id="@+id/transporte_row" style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/transporte" style="@style/BenefitFont" />
 			<TextView android:id="@+id/transporte_total" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
 		<LinearLayout android:id="@+id/previdencia_row" style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/previdencia" style="@style/BenefitFont" />
 			<TextView android:id="@+id/previdencia_total" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
 		<LinearLayout android:id="@+id/educacao_row" style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/educacao" style="@style/BenefitFont" />
-			<TextView android:id="@+id/educacao_total" style="@style/BenefitFont.Value"/>
+			<TextView android:id="@+id/educacao_total" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
 		<LinearLayout android:id="@+id/equipamentos_row" style="@style/HomeLayoutRow">
-            <ImageView style="@style/SideImage.Pencil"/>
+			<ImageView style="@style/SideImage.Pencil" />
 			<TextView android:text="@string/equipamentos" style="@style/BenefitFont" />
 			<TextView android:id="@+id/equipamentos_total" style="@style/BenefitFont.Value" />
 		</LinearLayout>
 
 		<LinearLayout style="@style/HomeLayoutRow">
-			<TextView android:text="@string/total" style="@style/BenefitFont" android:textSize="20sp"/>
-			<TextView android:id="@+id/total" style="@style/BenefitFont.Value" android:textSize="20sp"/>
+			<TextView android:text="@string/total" style="@style/BenefitFont"
+				android:textSize="20sp" />
+			<TextView android:id="@+id/total" style="@style/BenefitFont.Value"
+				android:textSize="20sp" />
 		</LinearLayout>
 	</LinearLayout>
 </ScrollView>
