@@ -15,11 +15,12 @@ public final class R {
     }
     public static final class drawable {
         public static final int cit_icon=0x7f020000;
-        public static final int icon=0x7f020001;
-        public static final int logo_cit_gif=0x7f020002;
-        public static final int logo_cit_jpg=0x7f020003;
-        public static final int pencil=0x7f020004;
-        public static final int shopping_basket=0x7f020005;
+        public static final int help=0x7f020001;
+        public static final int icon=0x7f020002;
+        public static final int logo_cit_gif=0x7f020003;
+        public static final int logo_cit_jpg=0x7f020004;
+        public static final int pencil=0x7f020005;
+        public static final int shopping_basket=0x7f020006;
     }
     public static final class id {
         public static final int agreg_coletivo_spinner=0x7f070027;
@@ -40,8 +41,10 @@ public final class R {
         public static final int educacao_total=0x7f070014;
         public static final int equipamentos_row=0x7f070015;
         public static final int equipamentos_total=0x7f070016;
-        public static final int estacionamento_check=0x7f070030;
-        public static final int fretado_check=0x7f07002f;
+        public static final int estacionamento_check=0x7f070034;
+        public static final int estacionamento_label=0x7f070033;
+        public static final int fretado_check=0x7f070032;
+        public static final int fretado_label=0x7f070031;
         public static final int plano_odonto_outro=0x7f07001d;
         public static final int plano_odonto_radio_group=0x7f070018;
         public static final int plano_odonto_row=0x7f070008;
@@ -60,20 +63,22 @@ public final class R {
         public static final int pro_diamond_radio=0x7f07001c;
         public static final int pro_gold_radio=0x7f07001b;
         public static final int pro_master_radio=0x7f07001a;
-        public static final int quilometros=0x7f07002e;
+        public static final int quilometros=0x7f070030;
+        public static final int quilometros_help=0x7f07002e;
+        public static final int quilometros_label=0x7f07002f;
         public static final int seguro_vida=0x7f070005;
         public static final int simple_edit_title=0x7f07002b;
         public static final int total=0x7f070017;
-        public static final int transporte_edit_button=0x7f070031;
+        public static final int transporte_edit_button=0x7f070035;
         public static final int transporte_row=0x7f07000e;
         public static final int transporte_total=0x7f07000f;
         public static final int uniodonto_radio=0x7f070019;
-        public static final int vale_alimentacao_edit_button=0x7f070033;
-        public static final int vale_alimentacao_edit_text=0x7f070032;
+        public static final int vale_alimentacao_edit_button=0x7f070037;
+        public static final int vale_alimentacao_edit_text=0x7f070036;
         public static final int vale_alimentacao_row=0x7f07000c;
         public static final int vale_alimentacao_total=0x7f07000d;
-        public static final int vale_refeicao_edit_button=0x7f070035;
-        public static final int vale_refeicao_edit_text=0x7f070034;
+        public static final int vale_refeicao_edit_button=0x7f070039;
+        public static final int vale_refeicao_edit_text=0x7f070038;
         public static final int vale_refeicao_row=0x7f07000a;
         public static final int vale_refeicao_total=0x7f07000b;
     }
@@ -106,7 +111,9 @@ public final class R {
         public static final int BenefitFont_Green=0x7f060002;
         public static final int BenefitFont_Red=0x7f060003;
         public static final int BenefitValueFont=0x7f060004;
-        public static final int PencilImage=0x7f060005;
+        public static final int LeftSideImage=0x7f060005;
+        public static final int LeftSideImage_Help=0x7f060007;
+        public static final int LeftSideImage_Pencil=0x7f060006;
         public static final int ScreenHeaderFont=0x7f060000;
     }
 }

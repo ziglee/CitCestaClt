@@ -15,22 +15,18 @@
             android:layout_height="wrap_content">
             
             <RadioButton android:id="@+id/uniodonto_radio" 
-                android:text="Uniodonto (R$ 13,94)" 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content" />
                 
             <RadioButton android:id="@+id/pro_master_radio" 
-                android:text="Prodent Máster (R$ 13,50)" 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"/>
                 
             <RadioButton android:id="@+id/pro_gold_radio" 
-                android:text="Prodent Gold (R$ 50,05)" 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"/>
                 
             <RadioButton android:id="@+id/pro_diamond_radio" 
-                android:text="Prodent Diamond (R$ 69,34)" 
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"/>
 	    </RadioGroup>

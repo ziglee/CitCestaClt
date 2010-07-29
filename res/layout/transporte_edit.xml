@@ -8,9 +8,11 @@
         
     <LinearLayout android:orientation="horizontal" 
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
         
-        <TextView android:text="Quilometragem (1,10 R$/Km)" 
+        <ImageView android:id="@+id/quilometros_help" style="@style/LeftSideImage.Help"/>
+        <TextView android:id="@+id/quilometros_label"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -27,7 +29,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         
-        <TextView android:text="Fretado (R$ 183,00)" 
+        <TextView android:id="@+id/fretado_label"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -41,7 +43,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         
-        <TextView android:text="Estacionamento Polis (R$ 60,00)" 
+        <TextView  android:id="@+id/estacionamento_label"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -55,7 +57,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
         
-        <TextView android:text="Total" 
+        <TextView android:text="@string/total" 
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

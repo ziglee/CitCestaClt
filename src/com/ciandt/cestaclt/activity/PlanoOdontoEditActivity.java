@@ -64,6 +64,11 @@ public class PlanoOdontoEditActivity extends Activity {
 		outroEditText = (EditText) findViewById(R.id.plano_odonto_outro);
 		ok = (Button) findViewById(R.id.plano_odonto_save);
 		
+		uniodontoRadio.setText("Uniodonto ("+ Util.formatarMoeda(uniodontoValue) +")");
+		proMasterRadio.setText("Prodent Máster ("+ Util.formatarMoeda(prodentMasterValue) +")");
+		proGoldRadio.setText("Prodent Gold ("+ Util.formatarMoeda(prodentGoldValue) +")");
+		proDiamondRadio.setText("Prodent Diamond ("+ Util.formatarMoeda(prodentDiamondValue) +")");
+		
 		uniodontoRadio.setChecked(false);
 		proMasterRadio.setChecked(false);
 		proGoldRadio.setChecked(false);

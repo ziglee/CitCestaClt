@@ -1,6 +1,8 @@
 package com.ciandt.cestaclt.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -24,7 +26,11 @@ public class TransporteEditActivity extends Activity {
 	private boolean estacionamento;
 	private boolean fretado;
 	private float total;
-	
+
+	private View quilometrosHelp;
+	private TextView quilometrosTV;
+	private TextView fretadoTV;
+	private TextView estacionamentoTV;
 	private TextView totalTV;
 	private EditText quilometrosEditText;
 	private CheckBox fretadoCheck;
@@ -46,11 +52,35 @@ public class TransporteEditActivity extends Activity {
 	}
 
 	private void bindComponents() {
+		quilometrosHelp = (View) findViewById(R.id.quilometros_help);
+		quilometrosTV = (TextView) findViewById(R.id.quilometros_label);
+		fretadoTV = (TextView) findViewById(R.id.fretado_label);
+		estacionamentoTV = (TextView) findViewById(R.id.estacionamento_label);
 		totalTV = (TextView) findViewById(R.id.transporte_total);
 		quilometrosEditText = (EditText) findViewById(R.id.quilometros);
 		fretadoCheck = (CheckBox) findViewById(R.id.fretado_check);
 		estacionamentoCheck = (CheckBox) findViewById(R.id.estacionamento_check);
 		button = (Button) findViewById(R.id.transporte_edit_button);
+
+		quilometrosTV.setText("Quilômetros ("+ Util.formatarMoeda(quilometroValue) + "/Km)");
+		fretadoTV.setText("Fretado ("+ Util.formatarMoeda(fretadoValue) +")");
+		estacionamentoTV.setText("Estacionamento Polis ("+ Util.formatarMoeda(estacionamentoValue) +")");
+		
+		quilometrosHelp.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				AlertDialog.Builder builder = new AlertDialog.Builder(TransporteEditActivity.this);
+				builder.setMessage("Digite a distância de sua residência até a Ci&T.\nO valor calculado será de ida e volta de 22 dias desta distância.");
+				builder.setCancelable(true);
+				builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.dismiss();
+					}
+				});
+				final AlertDialog alert = builder.create();
+				alert.show();
+			}
+		});
 		
 		quilometrosEditText.addTextChangedListener(new TextWatcher() {
 			@Override
