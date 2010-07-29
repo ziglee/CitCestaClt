@@ -20,7 +20,6 @@ public final class R {
         public static final int logo_cit_gif=0x7f020003;
         public static final int logo_cit_jpg=0x7f020004;
         public static final int pencil=0x7f020005;
-        public static final int shopping_basket=0x7f020006;
     }
     public static final class id {
         public static final int agreg_coletivo_spinner=0x7f070025;
@@ -106,13 +105,12 @@ public final class R {
     }
     public static final class style {
         public static final int BenefitFont=0x7f060002;
-        public static final int BenefitFont_Green=0x7f060003;
-        public static final int BenefitFont_Red=0x7f060004;
-        public static final int BenefitValueFont=0x7f060005;
+        public static final int BenefitFont_Red=0x7f060003;
+        public static final int BenefitFont_Value=0x7f060004;
         public static final int HomeLayoutRow=0x7f060001;
         public static final int ScreenHeaderFont=0x7f060000;
-        public static final int SideImage=0x7f060006;
-        public static final int SideImage_Help=0x7f060008;
-        public static final int SideImage_Pencil=0x7f060007;
+        public static final int SideImage=0x7f060005;
+        public static final int SideImage_Help=0x7f060007;
+        public static final int SideImage_Pencil=0x7f060006;
     }
 }
