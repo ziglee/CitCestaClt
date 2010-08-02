@@ -36,6 +36,7 @@ public class PlanoSaudeEditActivity extends Activity {
 	private TextView agregPrivativoTV;
 	private TextView agregColetivoTV;
 	private TextView totalTV;
+	private TextView obs;
 	private Spinner colabPrivativoSpinner;
 	private Spinner colabColetivoSpinner;
 	private Spinner agregPrivativoSpinner;
@@ -60,6 +61,7 @@ public class PlanoSaudeEditActivity extends Activity {
 		colabColetivoTV.setText("Colaborativo para colaboradores e dependentes* ("+ Util.formatarMoeda(colabColetivoValue) +")");
 		agregPrivativoTV.setText("Privativo para agregados** ("+ Util.formatarMoeda(agregPrivativoValue) +")");
 		agregColetivoTV.setText("Colaborativo para agregados** ("+ Util.formatarMoeda(agregColetivoValue) +")");
+		obs.setText("Obs.: * esposo(a) - (comprovado, mediante certidão de casamento ou documento equivalente) e filhos.\n** pai, mãe, sogro e sogra.");
 	}
 
 	private void bindComponents() {
@@ -72,6 +74,7 @@ public class PlanoSaudeEditActivity extends Activity {
 		agregPrivativoTV = (TextView) findViewById(R.id.agreg_privativo_text);
 		agregColetivoTV = (TextView) findViewById(R.id.agreg_coletivo_text);
 		totalTV = (TextView) findViewById(R.id.plano_saude_subtotal);
+		obs = (TextView) findViewById(R.id.plano_saude_obs);
 		outrosEditText = (EditText) findViewById(R.id.plano_saude_outros);
 		ok = (Button) findViewById(R.id.plano_saude_save);
 		

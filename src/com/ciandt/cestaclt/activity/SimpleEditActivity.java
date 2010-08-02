@@ -14,6 +14,7 @@ import com.ciandt.cestaclt.R;
 public class SimpleEditActivity extends Activity {
 
 	private TextView title;
+	private TextView obs;
 	private EditText editText;
 	private Button button;
 
@@ -27,6 +28,7 @@ public class SimpleEditActivity extends Activity {
 		int editRequest = extras.getInt("EDIT_REQUEST");
 
 		title = (TextView) findViewById(R.id.simple_edit_title);
+		obs = (TextView) findViewById(R.id.simple_edit_obs);
 		editText = (EditText) findViewById(R.id.previdencia_edit_text);
 		button = (Button) findViewById(R.id.previdencia_edit_button);
 		
@@ -36,9 +38,11 @@ public class SimpleEditActivity extends Activity {
 			break;
 		case Home.EDUCACAO_EDIT_REQUEST:
 			title.setText(R.string.educacao);
+			obs.setText("Obs.: Dependentes do imposto de renda pode usufruir.");
 			break;
 		case Home.EQUIPAMENTOS_EDIT_REQUEST:
 			title.setText(R.string.equipamentos);
+			obs.setText("Obs.: Conexão Internet banda larga.");
 			break;
 		}
 		

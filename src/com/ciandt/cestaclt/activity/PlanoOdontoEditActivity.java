@@ -33,6 +33,7 @@ public class PlanoOdontoEditActivity extends Activity {
 	private RadioButton proDiamondRadio;
 	private EditText outroEditText;
 	private TextView totalTV;
+	private TextView obs;
 	private Button ok;
 	
 	private static final float uniodontoValue = 13.94f;
@@ -61,6 +62,7 @@ public class PlanoOdontoEditActivity extends Activity {
 		proGoldRadio = (RadioButton) findViewById(R.id.pro_gold_radio);
 		proDiamondRadio = (RadioButton) findViewById(R.id.pro_diamond_radio);
 		totalTV = (TextView) findViewById(R.id.plano_odonto_subtotal);
+		obs = (TextView) findViewById(R.id.plano_odonto_obs);
 		outroEditText = (EditText) findViewById(R.id.plano_odonto_outro);
 		ok = (Button) findViewById(R.id.plano_odonto_save);
 		
@@ -68,6 +70,7 @@ public class PlanoOdontoEditActivity extends Activity {
 		proMasterRadio.setText("Prodent Máster ("+ Util.formatarMoeda(prodentMasterValue) +")");
 		proGoldRadio.setText("Prodent Gold ("+ Util.formatarMoeda(prodentGoldValue) +")");
 		proDiamondRadio.setText("Prodent Diamond ("+ Util.formatarMoeda(prodentDiamondValue) +")");
+		obs.setText("Obs.: De acordo com a exigência existente no contrato da Prodent, caso o colaborador opte pelo plano, deverá permanecer no mesmo pelo período mínimo de 18 meses, exceto se ocorrer rescisão do contrato de trabalho.");
 		
 		uniodontoRadio.setChecked(false);
 		proMasterRadio.setChecked(false);

@@ -32,6 +32,7 @@ public class TransporteEditActivity extends Activity {
 	private TextView fretadoTV;
 	private TextView estacionamentoTV;
 	private TextView totalTV;
+	private TextView obs;
 	private EditText quilometrosEditText;
 	private CheckBox fretadoCheck;
 	private CheckBox estacionamentoCheck;
@@ -57,6 +58,7 @@ public class TransporteEditActivity extends Activity {
 		fretadoTV = (TextView) findViewById(R.id.fretado_label);
 		estacionamentoTV = (TextView) findViewById(R.id.estacionamento_label);
 		totalTV = (TextView) findViewById(R.id.transporte_total);
+		obs = (TextView) findViewById(R.id.transporte_obs);
 		quilometrosEditText = (EditText) findViewById(R.id.quilometros);
 		fretadoCheck = (CheckBox) findViewById(R.id.fretado_check);
 		estacionamentoCheck = (CheckBox) findViewById(R.id.estacionamento_check);
@@ -65,6 +67,7 @@ public class TransporteEditActivity extends Activity {
 		quilometrosTV.setText("Quilômetros ("+ Util.formatarMoeda(quilometroValue) + "/Km)");
 		fretadoTV.setText("Fretado ("+ Util.formatarMoeda(fretadoValue) +")");
 		estacionamentoTV.setText("Estacionamento Polis ("+ Util.formatarMoeda(estacionamentoValue) +")");
+		obs.setText("Obs.: Podem ser solicitados os dois, tanto fretado quanto km, desde que o colaborador assine um termo de que pode fazer uso de ambos.");
 		
 		quilometrosHelp.setOnClickListener(new OnClickListener() {
 			@Override

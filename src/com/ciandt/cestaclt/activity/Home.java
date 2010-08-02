@@ -1,13 +1,18 @@
 package com.ciandt.cestaclt.activity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ciandt.cestaclt.R;
 import com.ciandt.cestaclt.Util;
@@ -15,6 +20,8 @@ import com.ciandt.cestaclt.Util;
 public class Home extends Activity {
 
 	public static final String PREFS_NAME = "HomePrefsFile";
+	
+	private Dialog sobreDialog;
 	
 	private TextView beneficioDispTV;
 	private TextView seguroVidaTV;
@@ -27,6 +34,7 @@ public class Home extends Activity {
 	private TextView educacaoTV;
 	private TextView equipamentosTV;
 	private TextView totalTV;
+	private TextView obs;
 	
 	private float beneficioDisp;
 	private float seguroVida;
@@ -57,6 +65,12 @@ public class Home extends Activity {
 	public static final int PREVIDENCIA_EDIT_REQUEST = 6;
 	public static final int EDUCACAO_EDIT_REQUEST = 7;
 	public static final int EQUIPAMENTOS_EDIT_REQUEST = 8;
+	
+	private static final int MENU_SAVE = 1;
+	private static final int MENU_ABOUT = 2;
+	private static final int MENU_EXIT = 3;
+	
+	private static final int DIALOG_SOBRE_ID = 0;
 
     /** Called when the activity is first created. */
     @Override
@@ -128,6 +142,46 @@ public class Home extends Activity {
     	super.onDestroy();
     	writePreferences();
     }
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    menu.add(0, MENU_SAVE, 0, "Salvar").setIcon(R.drawable.ic_menu_save);
+	    menu.add(0, MENU_ABOUT, 1, "Sobre").setIcon(R.drawable.ic_menu_info_details);
+	    menu.add(0, MENU_EXIT, 2, "Sair").setIcon(R.drawable.ic_menu_close_clear_cancel);
+	    return true;
+	}
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case MENU_SAVE:
+        	writePreferences();
+        	Toast.makeText(Home.this, "Dados salvos com sucesso!", Toast.LENGTH_SHORT).show();
+        	return true;
+        case MENU_ABOUT:
+    		showDialog(DIALOG_SOBRE_ID);
+        	return true;
+        case MENU_EXIT:
+        	finish();
+	    	return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+    	Dialog dialog;
+        switch(id) {
+        case DIALOG_SOBRE_ID:
+            dialog = sobreDialog;
+            break;
+        default:
+            dialog = null;
+        }
+        return dialog;
+
+    }
     
     private void bindComponents(){
     	beneficioDispTV = (TextView)findViewById(R.id.beneficio_disp);
@@ -141,7 +195,11 @@ public class Home extends Activity {
         educacaoTV = (TextView)findViewById(R.id.educacao_total);
         equipamentosTV = (TextView)findViewById(R.id.equipamentos_total);
         totalTV = (TextView)findViewById(R.id.total);
+        obs = (TextView)findViewById(R.id.home_obs);
+		sobreDialog = createSobreDialog();
         
+        obs.setText("Obs.: Todas as despesas não administradas pela Ci&T precisarão ser comprovadas mensalmente.");
+		
         View beneficioDispRow = (View) findViewById(R.id.beneficio_disp_row);
         beneficioDispRow.setOnClickListener(new OnClickListener() {
 			@Override
@@ -233,6 +291,20 @@ public class Home extends Activity {
 				startActivityForResult(i, EQUIPAMENTOS_EDIT_REQUEST);
 			}
 		});
+    }
+    
+    private Dialog createSobreDialog(){
+    	Dialog dialog = new Dialog(this);
+    	dialog.setContentView(R.layout.sobre_dialog);
+    	dialog.setTitle("Sobre");
+
+    	ImageView image = (ImageView) dialog.findViewById(R.id.sobre_image);
+    	image.setImageResource(R.drawable.cit_icon);
+    	
+    	TextView text = (TextView) dialog.findViewById(R.id.sobre_text);
+    	text.setText("Desenvolvido por Cássio Landim Ribeiro.\nclandim@ciandt.com\nCopyright Ci&T. Todos os direitos reservados.");
+    	
+    	return dialog;
     }
     
     private void loadPreferences(){

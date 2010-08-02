@@ -74,4 +74,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Ok"/>
+        
+    <TextView android:id="@+id/transporte_obs" 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
  </LinearLayout>

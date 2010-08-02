@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CIT Cesta CLT</string>
+    <string name="app_name"><![CDATA[Ci&T Cesta]]></string>
     <string name="beneficio_disp">Benefício Disponível</string>
     <string name="plano_saude">Plano de Saúde</string>
     <string name="plano_odonto">Plano Odontológico</string>
