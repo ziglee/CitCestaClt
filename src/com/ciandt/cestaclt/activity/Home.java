@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,7 +72,18 @@ public class Home extends Activity {
 	private static final int MENU_EXIT = 3;
 	
 	private static final int DIALOG_SOBRE_ID = 0;
+	
+	private final Intent emailIntent;
 
+	public Home() {
+        emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+    	//emailIntent.setType("plain/text");
+    	emailIntent.setType("message/rfc822");
+    	emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"clandim@ciandt.com"});
+    	emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Ci&T Cesta (Android)");
+    	emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "");
+	}
+	
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -302,8 +314,15 @@ public class Home extends Activity {
     	image.setImageResource(R.drawable.cit_icon);
     	
     	TextView text = (TextView) dialog.findViewById(R.id.sobre_text);
+    	text.setAutoLinkMask(Linkify.EMAIL_ADDRESSES);
+    	text.setLinksClickable(false);
     	text.setText("Desenvolvido por Cássio Landim Ribeiro.\nclandim@ciandt.com\nCopyright Ci&T. Todos os direitos reservados.");
-    	
+    	text.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+		    	startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+			}
+		});
     	return dialog;
     }
     
